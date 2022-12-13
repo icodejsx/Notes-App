@@ -1,16 +1,5 @@
-import NotesView from "./NotesView.js";
-import NotesAPI from "./NotesAPI.js";
+import App from "./App.js";
 
-const app = document.getElementById("app");
-const view = new NotesView(app, {
-    onNoteAdd(){
-        console.log("lets Add a a New Note ")
-    },
 
-    onNoteEdit(newTitle, newBody){
-        console.log(newTitle)
-        console.log(newBody)
-    }
-});
-
-view.updateNoteList(NotesAPI.getAllNotes());
+const root = document.getElementById("app");
+const app = new App(root);

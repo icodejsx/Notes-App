@@ -34,7 +34,7 @@ export default class NotesView {
             });
         });
 
-        this.updateNotePreviewVisibility(true);
+        this.updateNotePreviewVisibility(false);
     }
 
     _createListItemHTML(id, title, body, updated) {
@@ -96,6 +96,6 @@ export default class NotesView {
 
 
     updateNotePreviewVisibility(visible){
-        this.root.querySelector('.notes__preivew').style.visibility = visible ? 'visible' : 'hidden';
+        this.root.querySelector('.notes__preview').style.visibility = visible ? 'visible' : 'hidden';
     }
 }

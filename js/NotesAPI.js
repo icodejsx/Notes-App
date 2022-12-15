@@ -7,21 +7,21 @@ export default class NotesAPI{
         }) ; 
     }
     //  saving the notes to a localStorage 
-    static saveNote (notesToSave){
+    static saveNote (noteToSave){
         const notes = NotesAPI.getAllNotes();
-        const exisiting = notes.find(note => note.id == notesToSave.id);
+        const exisiting = notes.find(note => note.id == noteToSave.id);
 
         // editing and upating
         if(exisiting){
-            exisiting.title = notesToSave.title;
-            exisiting.body = notesToSave.body;
+            exisiting.title = noteToSave.title;
+            exisiting.body = noteToSave.body;
             exisiting.updated = new Date ().toISOString();
         }
         else{
            // creating a local storage and adding the name of the local soragte 
-        notesToSave.id = Math.floor(Math.random () * 1000000);
-        notesToSave.updated = new Date ().toISOString();
-        notes.push(notesToSave);
+        noteToSave.id = Math.floor(Math.random () * 1000000);
+        noteToSave.updated = new Date ().toISOString();
+        notes.push(noteToSave);
         }
 
        
@@ -30,7 +30,7 @@ export default class NotesAPI{
 
 
     // for the delete Note
-    static deleteNotes(id){
+    static deleteNote(id){
          const notes = NotesAPI.getAllNotes();
          const newNotes = notes.filter(note => note.id != id);
 
